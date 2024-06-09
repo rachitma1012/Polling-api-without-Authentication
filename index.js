@@ -6,6 +6,8 @@ import router from './src/routes/allRoutes.js';
 // dotenv configration
 dotenv.config()
 const app = express();
+ // database connection
+ connectDb();
 // for parsing the data;
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -17,6 +19,5 @@ app.get('/',(req,res)=>{
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is up and running on port number ${process.env.PORT}!`);
-    // database connection
-    connectDb();
+   
 })
